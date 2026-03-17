@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo de Tiragens</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-dark: #090707;
@@ -51,7 +53,7 @@
     }
 
     .container {
-      width: min(100% - 32px, var(--maxw));
+      width: min(100% - 24px, var(--maxw));
       margin-inline: auto;
     }
 
@@ -62,7 +64,7 @@
     .section-title {
       font-family: 'Cinzel', serif;
       font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1;
+      line-height: 1.05;
       margin-bottom: 12px;
       letter-spacing: 0.04em;
     }
@@ -75,30 +77,30 @@
     }
 
     .hero {
-        min-height: 100vh;
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        background:
-            radial-gradient(circle at 82% 18%, rgba(243, 118, 201, 0.9), rgba(255, 182, 193, 0.2) 18%, rgba(0,0,0,0) 38%),
-            linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.75)),
-            url('images/gato-hero.jpg') center/cover no-repeat;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255, 182, 193, 0.88), rgba(255, 182, 193, 0.18) 18%, rgba(0,0,0,0) 38%),
+        linear-gradient(180deg, rgba(0,0,0,.3), rgba(0,0,0,.75)),
+        url('imagens/gato-hero.jpg') center/cover no-repeat;
     }
 
     .hero::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 25%);
-        pointer-events: none;
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(255,255,255,.08), transparent 25%);
+      pointer-events: none;
     }
 
     .hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 720px;
-        padding: 80px 0;
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      padding: 80px 0;
     }
 
     .eyebrow {
@@ -120,7 +122,7 @@
     .hero h2 {
       font-family: 'Cinzel', serif;
       font-size: clamp(1.7rem, 3vw, 3rem);
-      max-width: 640px;
+      max-width: 700px;
       line-height: 1.15;
       margin-bottom: 18px;
     }
@@ -170,36 +172,6 @@
 
     .btn-secondary:hover {
       background: rgba(255,255,255,.12);
-    }
-
-    .intro-strip {
-      background: linear-gradient(180deg, #171010, #0d0909);
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .intro-card {
-      padding: 28px;
-      border-radius: var(--radius-lg);
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-
-    .intro-card h3 {
-      font-family: 'Cinzel', serif;
-      margin-bottom: 8px;
-      color: #f2d6a4;
-    }
-
-    .intro-card p {
-      line-height: 1.75;
-      color: rgba(255,248,241,.85);
     }
 
     .soft-section {
@@ -388,11 +360,11 @@
     }
 
     .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 260px);
-        justify-content: center;
-        gap: 18px;
-        margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 260px);
+      justify-content: center;
+      gap: 18px;
+      margin-top: 32px;
     }
 
     .gallery-item {
@@ -410,10 +382,150 @@
       object-fit: cover;
     }
 
+    .about-section {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 182, 193, 0.08), transparent 22%),
+        radial-gradient(circle at 85% 80%, rgba(181,138,74,.10), transparent 22%),
+        linear-gradient(180deg, #0d0808 0%, #120a0a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-section::before,
+    .about-section::after {
+      content: '';
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,255,255,.05), transparent 68%);
+    }
+
+    .about-section::before {
+      top: -120px;
+      left: -100px;
+    }
+
+    .about-section::after {
+      bottom: -140px;
+      right: -100px;
+    }
+
+    .about-card {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      align-items: center;
+      gap: 34px;
+      padding: 34px;
+      border-radius: 30px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.28);
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-image-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image {
+      width: 100%;
+      max-width: 290px;
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      background: #1a1111;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      text-align: left;
+    }
+
+    .about-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-size: .9rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f3d9a2;
+    }
+
+    .about-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #fff8f1;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: rgba(255,248,241,.88);
+      margin-bottom: 26px;
+    }
+
+    .about-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .about-btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f3c2d7, #e8a7c5);
+      color: #2b0d1c;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+    }
+
+    .about-btn-instagram:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .about-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.16);
+      color: #fff8f1;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .about-btn-secondary:hover {
+      background: rgba(255,255,255,.10);
+    }
+
     .cta {
       background:
         linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)),
-        url('images/gato-final.jpg') center/cover no-repeat;
+        url('imagens/gato-final.jpg') center/cover no-repeat;
       min-height: 70vh;
       display: flex;
       align-items: center;
@@ -443,46 +555,6 @@
       color: rgba(255,248,241,.9);
     }
 
-    .about-section {
-    background: linear-gradient(180deg, #0d0808, #000000);
-    padding: 100px 0;
-    }
-
-    .about-container {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    }
-
-    .about-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.8rem;
-    margin-bottom: 25px;
-    }
-
-    .about-text {
-    font-size: 1.05rem;
-    line-height: 1.9;
-    opacity: 0.9;
-    margin-bottom: 35px;
-    }
-
-    .about-btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #f6c4d7, #e79ab6);
-    color: #2b0d1c;
-    font-weight: 600;
-    transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,.35);
-    }
-
-    .about-btn:hover {
-    transform: translateY(-3px);
-    filter: brightness(1.05);
-    }
-
     footer {
       padding: 26px 0 42px;
       text-align: center;
@@ -492,37 +564,201 @@
     }
 
     @media (max-width: 980px) {
-      .intro-grid,
       .catalog-grid,
-      .energy-grid,
-      .gallery-grid {
+      .energy-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+      }
+
+      .about-card {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .about-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 28px;
+      }
+
+      .about-content {
+        text-align: center;
+      }
+
+      .about-actions {
+        justify-content: center;
+      }
+
+      .about-image {
+        max-width: 260px;
       }
     }
 
     @media (max-width: 720px) {
       .section {
-        padding: 68px 0;
+        padding: 56px 0;
       }
 
-      .intro-grid,
+      .container {
+        width: min(100% - 20px, var(--maxw));
+      }
+
+      .hero {
+        min-height: auto;
+        background:
+          radial-gradient(circle at 82% 12%, rgba(255, 182, 193, 0.85), rgba(255, 182, 193, 0.16) 18%, rgba(0,0,0,0) 38%),
+          linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.82)),
+          url('imagens/gato-hero.jpg') center/cover no-repeat;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 96px 0 56px;
+      }
+
+      .eyebrow {
+        font-size: .78rem;
+        letter-spacing: .18em;
+        margin-bottom: 14px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.2rem);
+        line-height: 1;
+        margin-bottom: 14px;
+      }
+
+      .hero h2 {
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        line-height: 1.18;
+        margin-bottom: 14px;
+      }
+
+      .hero p {
+        font-size: .96rem;
+        line-height: 1.7;
+        margin-bottom: 22px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
       .catalog-grid,
       .energy-grid,
       .gallery-grid {
         grid-template-columns: 1fr;
       }
 
+      .catalog-card,
+      .energy-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
       .catalog-top {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
       }
 
-      .hero {
+      .catalog-card h3,
+      .energy-card h3 {
+        font-size: 1.35rem;
+      }
+
+      .catalog-card p,
+      .energy-card p,
+      .section-subtitle {
+        font-size: .96rem;
+        line-height: 1.7;
+      }
+
+      .topics {
+        gap: 8px;
+      }
+
+      .topics span {
+        font-size: .84rem;
+        padding: 8px 10px;
+      }
+
+      .gallery-grid {
+        justify-items: center;
+        gap: 14px;
+      }
+
+      .gallery-item {
+        width: min(100%, 320px);
+        aspect-ratio: 1 / 1;
+        border-radius: 20px;
+      }
+
+      .about-section {
+        padding: 56px 0;
+      }
+
+      .about-card {
+        gap: 22px;
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .about-title {
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      .about-text {
+        font-size: .96rem;
+        line-height: 1.75;
+      }
+
+      .about-actions {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .about-btn-instagram,
+      .about-btn-secondary {
+        width: 100%;
+      }
+
+      .about-image {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+
+      .cta {
         min-height: auto;
+        padding: 56px 0;
+        background-position: center;
       }
 
-      .hero-content {
-        padding: 120px 0 72px;
+      .cta-box {
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      .cta-box h2 {
+        font-size: 1.8rem;
+        line-height: 1.15;
+      }
+
+      footer {
+        font-size: .88rem;
+        padding: 20px 0 28px;
       }
     }
   </style>
@@ -535,7 +771,7 @@
         <h1>Bem-vinda(o)</h1>
         <h2>Descubra leituras intuitivas, energéticas e espirituais</h2>
         <p>
-          Descrição do catálogo <3
+          Descrição do catálogo &lt;3
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
@@ -562,7 +798,11 @@
           </div>
           <h3>Pergunta avulsa</h3>
           <p>Uma leitura objetiva para uma dúvida específica, ideal para quem deseja uma resposta pontual.</p>
-          <div class="topics"><span>Resposta direta</span><span>Dúvida específica</span><span>Leitura breve</span></div>
+          <div class="topics">
+            <span>Resposta direta</span>
+            <span>Dúvida específica</span>
+            <span>Leitura breve</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -572,7 +812,11 @@
           </div>
           <h3>Análise de sonhos</h3>
           <p>Uma leitura voltada para mensagens simbólicas, interpretações e percepções intuitivas do sonho.</p>
-          <div class="topics"><span>Mensagens ocultas</span><span>Símbolos</span><span>Interpretação</span></div>
+          <div class="topics">
+            <span>Mensagens ocultas</span>
+            <span>Símbolos</span>
+            <span>Interpretação</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -582,7 +826,11 @@
           </div>
           <h3>Geral na vida amorosa</h3>
           <p>Uma leitura rápida para compreender sentimentos, bloqueios, intenções e caminhos no campo afetivo.</p>
-          <div class="topics"><span>Relacionamentos</span><span>Sentimentos</span><span>Conselhos</span></div>
+          <div class="topics">
+            <span>Relacionamentos</span>
+            <span>Sentimentos</span>
+            <span>Conselhos</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -592,7 +840,11 @@
           </div>
           <h3>Vidas passadas</h3>
           <p>Uma tiragem voltada para padrões antigos, aprendizados e influências espirituais no momento atual.</p>
-          <div class="topics"><span>Origem espiritual</span><span>Padrões</span><span>Propósito</span></div>
+          <div class="topics">
+            <span>Origem espiritual</span>
+            <span>Padrões</span>
+            <span>Propósito</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -602,7 +854,11 @@
           </div>
           <h3>O que trava minha vida?</h3>
           <p>Investigação sobre o que está travando sua área amorosa, financeira, espiritual ou objetivos pessoais.</p>
-          <div class="topics"><span>Amor</span><span>Financeiro</span><span>Objetivos</span></div>
+          <div class="topics">
+            <span>Amor</span>
+            <span>Financeiro</span>
+            <span>Objetivos</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -612,7 +868,11 @@
           </div>
           <h3>Todas as áreas</h3>
           <p>Leitura abrangente envolvendo amoroso, financeiro, familiar, espiritual, saúde, conselho e futuro.</p>
-          <div class="topics"><span>Visão geral</span><span>Conselho</span><span>Futuro</span></div>
+          <div class="topics">
+            <span>Visão geral</span>
+            <span>Conselho</span>
+            <span>Futuro</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -622,7 +882,11 @@
           </div>
           <h3>Carta canalizada</h3>
           <p>Uma leitura sensível para compreender o que a pessoa diria, sentiria ou expressaria se pudesse.</p>
-          <div class="topics"><span>Mensagens</span><span>Sentimentos</span><span>Conexão</span></div>
+          <div class="topics">
+            <span>Mensagens</span>
+            <span>Sentimentos</span>
+            <span>Conexão</span>
+          </div>
         </article>
 
         <article class="catalog-card">
@@ -632,7 +896,11 @@
           </div>
           <h3>Minhas manifestações</h3>
           <p>Voltada para entender frequência, mentalidade e ajustes necessários para melhorar resultados.</p>
-          <div class="topics"><span>Energia</span><span>Frequência</span><span>Melhoria</span></div>
+          <div class="topics">
+            <span>Energia</span>
+            <span>Frequência</span>
+            <span>Melhoria</span>
+          </div>
         </article>
       </div>
     </div>
@@ -643,7 +911,7 @@
       <div class="energy-header">
         <h2 class="section-title">Sessão de Energia</h2>
         <p class="section-subtitle">
-          sessao energetica e blablabla
+          Sessão energética e blablabla
         </p>
       </div>
 
@@ -712,46 +980,70 @@
 
   <section class="section gallery">
     <div class="container">
-      <h2 class="section-title">Baralhos no catálogo</h2>
+      <h2 class="section-title">Imagens do catálogo</h2>
 
       <div class="gallery-grid">
-        <div class="gallery-item"><img src="imagens/catalogo-1.jpeg" alt="Arte do catálogo 1"></div>
-        <div class="gallery-item"><img src="imagens/catalogo-2.jpeg" alt="Arte do catálogo 2"></div>
-        <div class="gallery-item"><img src="imagens/catalogo-3.jpeg" alt="Arte do catálogo 3"></div>
+        <div class="gallery-item">
+          <img src="imagens/catalogo-1.jpeg" alt="Arte do catálogo 1">
+        </div>
+        <div class="gallery-item">
+          <img src="imagens/catalogo-2.jpeg" alt="Arte do catálogo 2">
+        </div>
+        <div class="gallery-item">
+          <img src="imagens/catalogo-3.jpeg" alt="Arte do catálogo 3">
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="about-section">
-  <div class="container about-container">
+  <section class="section about-section" id="quem-sou-eu">
+    <div class="container">
+      <div class="about-card">
+        <div class="about-image-wrap">
+          <div class="about-image">
+            <img src="imagens/quem-sou-eu.jpg" alt="Foto representando quem sou eu">
+          </div>
+        </div>
 
-    <h2 class="about-title">Quem sou eu</h2>
+        <div class="about-content">
+          <span class="about-kicker">Quem sou eu</span>
+          <h2 class="about-title">Uma leitura feita com sensibilidade, intuição e acolhimento</h2>
 
-    <p class="about-text">
-      Meu nome é Marina e 
-      <br><br>
-      Cada tiragem é realizada com cuidado, respeito e intenção de trazer 
-      clareza, direcionamento e acolhimento para quem busca respostas.
-    </p>
+          <p class="about-text">
+            Meu nome é Marih.........
+            <br><br>
+            Aqui, o objetivo não é apenas responder perguntas, mas também oferecer um espaço
+            de orientação e escuta, com uma abordagem acolhedora e sincera.
+          </p>
 
-    <a 
-      class="about-btn" 
-      href="https://www.instagram.com/mariherine/" 
-      target="_blank"
-    >
-      Ver meu Instagram
-    </a>
+          <div class="about-actions">
+            <a class="about-btn-instagram" href="https://instagram.com/SEU_INSTAGRAM" target="_blank" rel="noopener noreferrer">
+              Ir para o Instagram
+            </a>
 
-  </div>
-</section>
+            <a class="about-btn-secondary" href="#agendar">
+              Agendar leitura
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section cta" id="agendar">
     <div class="container">
       <div class="cta-box">
         <h2>Vamos começar sua tiragem?</h2>
+        <p>
+          Escolha o atendimento ideal para você e entre em contato para agendar sua leitura.
+        </p>
         <div class="actions" style="justify-content:center;">
-          <a class="btn btn-primary" href="https://wa.me/5591984766337" target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
-          <a class="btn btn-secondary" href="#inicio">Voltar ao topo</a>
+          <a class="btn btn-primary" href="https://wa.me/5591984766337" target="_blank" rel="noopener noreferrer">
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-secondary" href="#inicio">
+            Voltar ao topo
+          </a>
         </div>
       </div>
     </div>
